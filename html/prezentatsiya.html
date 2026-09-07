@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover" />
     <title>Шоу мира — презентация</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -208,51 +208,40 @@
 
         /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
-            .slide { padding: 12px 14px 10px; }
-            .slide-title { font-size: 16px; }
-            .slide:first-child .slide-title { font-size: 26px; }
-            .slide-content { grid-template-columns: 1fr 1fr; gap: 4px 6px; }
-            .slide-subtitle { font-size: 10px; margin-bottom: 4px; }
-            .slide-number { font-size: 7px; }
-            .item .icon { font-size: 14px; }
-            .item h4 { font-size: 10px; }
-            .item p { font-size: 8px; }
-            .slide-content .item { padding: 4px 6px; border-radius: 6px; }
-            .nav button { padding: 4px 8px; font-size: 9px; }
-            .slide::after { font-size: 6px; bottom: 4px; right: 6px; }
-            .slides-wrapper { padding: 4px; }
-            .slide-container { height: 98vh; border-radius: 12px; }
-            .t-title { font-size: 10px; }
-            .tag { font-size: 7px; padding: 1px 6px; }
-            .slide-title br { display: none; }
-        }
+    .slide { padding: 18px 20px 16px; }
+    .slide-title { font-size: 22px; }
+    .slide:first-child .slide-title { font-size: 32px; }
+    .slide-content { grid-template-columns: 1fr 1fr; gap: 8px 10px; }
+    .slide-subtitle { font-size: 14px; margin-bottom: 6px; }
+    .slide-number { font-size: 10px; }
+    .item .icon { font-size: 20px; }
+    .item h4 { font-size: 14px; }
+    .item p { font-size: 12px; }
+    .slide-content .item { padding: 10px 12px; border-radius: 8px; }
+    .nav button { padding: 6px 12px; font-size: 12px; }
+    .slide::after { font-size: 8px; bottom: 6px; right: 10px; }
+    .slides-wrapper { padding: 6px; }
+    .slide-container { height: 98vh; border-radius: 14px; }
+    .t-title { font-size: 13px; }
+    .tag { font-size: 9px; padding: 2px 8px; }
+    .slide-title br { display: none; }
+}
 
-        @media (max-width: 480px) {
-            .slide { padding: 8px 10px 8px; }
-            .slide-title { font-size: 14px; }
-            .slide:first-child .slide-title { font-size: 22px; }
-            .slide-content { grid-template-columns: 1fr 1fr; gap: 3px; }
-            .slide-subtitle { font-size: 9px; }
-            .item .icon { font-size: 12px; }
-            .item h4 { font-size: 9px; }
-            .item p { font-size: 7px; }
-            .slide-content .item { padding: 3px 4px; border-radius: 4px; }
-            .nav button { padding: 3px 6px; font-size: 8px; }
-            .nav .dot { width: 4px; height: 4px; }
-            .nav .dot.active { width: 12px; }
-            .t-title { font-size: 9px; }
-            .tag { font-size: 6px; padding: 1px 4px; }
-            .slide::after { font-size: 5px; }
-        }
-
-        @media (max-width: 380px) {
-            .slide-title { font-size: 12px; }
-            .slide:first-child .slide-title { font-size: 18px; }
-            .slide-content { grid-template-columns: 1fr; gap: 2px; }
-            .item .icon { font-size: 10px; }
-            .item h4 { font-size: 8px; }
-            .item p { font-size: 7px; }
-        }
+       @media (max-width: 480px) {
+    .slide { padding: 14px 16px 12px; }
+    .slide-title { font-size: 18px; }
+    .slide:first-child .slide-title { font-size: 26px; }
+    .slide-content { grid-template-columns: 1fr; gap: 6px; }
+    .slide-subtitle { font-size: 12px; }
+    .item .icon { font-size: 16px; }
+    .item h4 { font-size: 12px; }
+    .item p { font-size: 10px; }
+    .slide-content .item { padding: 8px 10px; border-radius: 6px; }
+    .nav button { padding: 4px 10px; font-size: 10px; }
+    .slide::after { font-size: 7px; }
+    .t-title { font-size: 11px; }
+    .tag { font-size: 8px; padding: 2px 6px; }
+}
     </style>
 </head>
 <body>
