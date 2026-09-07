@@ -2,32 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>Шоу мира — презентация</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
-        /* ===== ЗАЩИТА ОТ КРАЖИ ===== */
-        /* Запрет выделения текста */
-        * {
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        }
-        /* Запрет сохранения картинок */
-        img {
-            pointer-events: none;
-            -webkit-touch-callout: none;
-        }
-        /* Запрет перетаскивания */
-        body {
-            -webkit-user-drag: none;
-            user-drag: none;
-        }
-
-        /* Остальные стили */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
@@ -38,6 +18,8 @@
         }
         ::-webkit-scrollbar { display: none; }
         * { scrollbar-width: none; }
+        img { pointer-events: none; -webkit-touch-callout: none; }
+        body { -webkit-user-drag: none; user-drag: none; }
 
         .slides-wrapper {
             position: relative;
@@ -46,20 +28,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 8px;
         }
 
         .slide-container {
             width: 100%;
             max-width: 1100px;
-            height: 92vh;
+            height: 98vh;
             position: relative;
             overflow: hidden;
-            border-radius: 24px;
+            border-radius: 16px;
             background: rgba(20, 16, 34, 0.7);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.04);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
         }
 
         .slides {
@@ -72,7 +54,7 @@
         .slide {
             min-width: 100%;
             height: 100%;
-            padding: 30px 50px 20px;
+            padding: 16px 12px 12px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -84,14 +66,13 @@
             position: relative;
         }
 
-        /* Водяной знак на каждом слайде */
         .slide::after {
             content: '© Шоу мира — 2026';
             position: absolute;
-            bottom: 12px;
-            right: 20px;
+            bottom: 6px;
+            right: 10px;
             font-family: 'Inter', sans-serif;
-            font-size: 10px;
+            font-size: 8px;
             color: rgba(255,255,255,0.08);
             letter-spacing: 1px;
             pointer-events: none;
@@ -100,42 +81,42 @@
 
         .slide-number {
             font-family: 'Inter', sans-serif;
-            font-size: 11px;
+            font-size: 9px;
             letter-spacing: 2px;
             color: rgba(255,255,255,0.5);
             text-transform: uppercase;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             flex-shrink: 0;
         }
 
         .slide-title {
             font-family: 'Playfair Display', serif;
-            font-size: 38px;
+            font-size: 20px;
             font-weight: 700;
             font-style: italic;
             background: linear-gradient(180deg, #fff 30%, #fbbf24);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.2;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             flex-shrink: 0;
         }
 
         .slide-subtitle {
             font-family: 'Inter', sans-serif;
-            font-size: 16px;
+            font-size: 12px;
             font-weight: 300;
             color: rgba(255,255,255,0.8);
-            line-height: 1.5;
+            line-height: 1.4;
             max-width: 700px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             flex-shrink: 0;
         }
 
         .slide-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px 24px;
+            gap: 6px 10px;
             flex: 1;
             align-content: center;
         }
@@ -144,8 +125,8 @@
             background: rgba(10, 5, 5, 0.5);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 14px 18px;
+            border-radius: 8px;
+            padding: 6px 8px;
             transition: 0.3s;
         }
         .slide-content .item:hover {
@@ -153,17 +134,17 @@
             border-color: rgba(251,191,36,0.15);
         }
 
-        .item .icon { font-size: 24px; margin-bottom: 2px; display: block; }
-        .item h4 { font-family: 'Playfair Display', serif; font-size: 16px; color: #fbbf24; margin-bottom: 2px; }
-        .item p { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.4; }
+        .item .icon { font-size: 16px; margin-bottom: 1px; display: block; }
+        .item h4 { font-family: 'Playfair Display', serif; font-size: 12px; color: #fbbf24; margin-bottom: 1px; }
+        .item p { font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.75); line-height: 1.3; }
 
         .nav {
             position: absolute;
-            bottom: 16px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
             z-index: 10;
         }
@@ -172,11 +153,11 @@
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255,255,255,0.06);
             color: #fff;
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 30px;
             cursor: pointer;
             font-family: 'Inter', sans-serif;
-            font-size: 13px;
+            font-size: 10px;
             transition: 0.3s;
         }
         .nav button:hover {
@@ -185,11 +166,11 @@
         }
         .nav .dots {
             display: flex;
-            gap: 6px;
+            gap: 5px;
         }
         .nav .dot {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background: rgba(255,255,255,0.15);
             transition: 0.3s;
@@ -197,76 +178,52 @@
         }
         .nav .dot.active {
             background: #fbbf24;
-            width: 24px;
-            border-radius: 4px;
+            width: 18px;
+            border-radius: 3px;
         }
 
-        @media (max-width: 768px) {
-    .slide { padding: 12px 10px 10px; }
-    .slide-title { font-size: 18px; }
-    .slide-content { grid-template-columns: 1fr; gap: 4px; }
-    .slide-subtitle { font-size: 11px; margin-bottom: 6px; }
-    .slide-number { font-size: 8px; margin-bottom: 3px; }
-    .item .icon { font-size: 16px; }
-    .item h4 { font-size: 12px; }
-    .item p { font-size: 10px; }
-    .slide-content .item { padding: 6px 8px; border-radius: 8px; }
-    .nav button { padding: 4px 8px; font-size: 9px; }
-    .slide::after { font-size: 6px; bottom: 4px; right: 6px; }
-    .slides-wrapper { padding: 6px; }
-    .slide-container { height: 98vh; border-radius: 12px; }
-    .slide-title br { display: none; }
-}
+        /* ОСОБЫЙ СЛАЙД — ТИТУЛ */
+        .slide:first-child .slide-title {
+            font-size: 28px;
+        }
+        .slide:first-child .slide-content {
+            display: none;
+        }
+        .slide:first-child .slide-subtitle {
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .slide { padding: 10px 8px 8px; }
+            .slide-title { font-size: 16px; }
+            .slide:first-child .slide-title { font-size: 22px; }
+            .slide-content { grid-template-columns: 1fr; gap: 4px; }
+            .slide-subtitle { font-size: 10px; }
+            .slide-number { font-size: 7px; }
+            .item .icon { font-size: 14px; }
+            .item h4 { font-size: 10px; }
+            .item p { font-size: 9px; }
+            .slide-content .item { padding: 4px 6px; border-radius: 6px; }
+            .nav button { padding: 4px 8px; font-size: 8px; }
+            .slide::after { font-size: 6px; bottom: 4px; right: 6px; }
+            .slides-wrapper { padding: 4px; }
+            .slide-container { height: 100vh; border-radius: 10px; }
+        }
     </style>
 </head>
 <body>
 
-<!-- ЗАЩИТА: блокировка клавиш F12, Ctrl+U, Ctrl+S, Ctrl+C, Ctrl+V -->
 <script>
     document.addEventListener('keydown', function(e) {
-        // Блокировка F12
-        if (e.key === 'F12') {
-            e.preventDefault();
-            return false;
-        }
-        // Блокировка Ctrl+U (просмотр кода)
-        if (e.ctrlKey && e.key === 'u') {
-            e.preventDefault();
-            return false;
-        }
-        // Блокировка Ctrl+S (сохранение страницы)
-        if (e.ctrlKey && e.key === 's') {
-            e.preventDefault();
-            return false;
-        }
-        // Блокировка Ctrl+C (копирование)
-        if (e.ctrlKey && e.key === 'c') {
-            e.preventDefault();
-            return false;
-        }
-        // Блокировка Ctrl+V (вставка)
-        if (e.ctrlKey && e.key === 'v') {
-            e.preventDefault();
-            return false;
-        }
-        // Блокировка Ctrl+Shift+I (инструменты разработчика)
-        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-            e.preventDefault();
-            return false;
-        }
+        if (e.key === 'F12') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.key === 'c') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.key === 'v') { e.preventDefault(); return false; }
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
     });
-
-    // Блокировка правой кнопки мыши
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-        return false;
-    });
-
-    // Блокировка перетаскивания
-    document.addEventListener('dragstart', function(e) {
-        e.preventDefault();
-        return false;
-    });
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+    document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
 </script>
 
 <div class="slides-wrapper">
@@ -276,69 +233,69 @@
             <!-- 1. ТИТУЛ -->
             <div class="slide" style="background-image: url('images/bg1.jpg');">
                 <div class="slide-number">★ ПРЕЗЕНТАЦИЯ ПРОЕКТА</div>
-                <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
-                    <div style="font-family:'Cormorant Garamond',serif; font-size:18px; color:#fbbf24; letter-spacing:4px; text-transform:uppercase; margin-bottom:8px;">Глобальная OTT-платформа</div>
-                    <div class="slide-title" style="font-size:72px;">Шоу мира</div>
-                    <div style="font-family:'Playfair Display',serif; font-size:28px; font-style:italic; color:rgba(255,255,255,0.5); margin-bottom:24px;">Шоу в любом ракурсе</div>
-                    <div style="display:flex; gap:20px; flex-wrap:wrap;">
-                        <span style="background:rgba(0,0,0,0.5); backdrop-filter:blur(8px); border:1px solid rgba(251,191,36,0.1); padding:4px 16px; border-radius:30px; font-size:13px; color:#fbbf24;">4DGS</span>
-                        <span style="background:rgba(0,0,0,0.5); backdrop-filter:blur(8px); border:1px solid rgba(251,191,36,0.1); padding:4px 16px; border-radius:30px; font-size:13px; color:#fbbf24;">ИИ-агент Ассоль</span>
-                        <span style="background:rgba(0,0,0,0.5); backdrop-filter:blur(8px); border:1px solid rgba(251,191,36,0.1); padding:4px 16px; border-radius:30px; font-size:13px; color:#fbbf24;">17 языков</span>
-                        <span style="background:rgba(0,0,0,0.5); backdrop-filter:blur(8px); border:1px solid rgba(251,191,36,0.1); padding:4px 16px; border-radius:30px; font-size:13px; color:#fbbf24;">Стриминг 4K</span>
+                <div style="flex:1; display:flex; flex-direction:column; justify-content:center; text-align:center;">
+                    <div style="font-family:'Cormorant Garamond',serif; font-size:14px; color:#fbbf24; letter-spacing:3px; text-transform:uppercase; margin-bottom:4px;">Глобальная OTT-платформа</div>
+                    <div class="slide-title" style="font-size:36px; text-align:center;">Шоу мира</div>
+                    <div style="font-family:'Playfair Display',serif; font-size:18px; font-style:italic; color:rgba(255,255,255,0.5); margin-bottom:12px;">Шоу в любом ракурсе</div>
+                    <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+                        <span style="background:rgba(0,0,0,0.5); backdrop-filter:blur(8px); border:1px solid rgba(251,191,36,0.1); padding:3px 12px; border-radius:30px; font-size:11px; color:#fbbf24;">4DGS</span>
+                        <span style="background:rgba(0,0,0,0.5); backdrop-filter:blur(8px); border:1px solid rgba(251,191,36,0.1); padding:3px 12px; border-radius:30px; font-size:11px; color:#fbbf24;">Ассоль</span>
+                        <span style="background:rgba(0,0,0,0.5); backdrop-filter:blur(8px); border:1px solid rgba(251,191,36,0.1); padding:3px 12px; border-radius:30px; font-size:11px; color:#fbbf24;">17 языков</span>
+                        <span style="background:rgba(0,0,0,0.5); backdrop-filter:blur(8px); border:1px solid rgba(251,191,36,0.1); padding:3px 12px; border-radius:30px; font-size:11px; color:#fbbf24;">Стриминг 4K</span>
                     </div>
-                    <div style="margin-top:32px; font-family:'Inter',sans-serif; font-size:14px; color:rgba(255,255,255,0.3);">Презентация для театров и инвесторов</div>
+                    <div style="margin-top:16px; font-family:'Inter',sans-serif; font-size:11px; color:rgba(255,255,255,0.3);">Презентация для театров и инвесторов</div>
                 </div>
             </div>
 
             <!-- 2. ПРОБЛЕМА -->
             <div class="slide" style="background-image: url('images/bg2.jpg');">
                 <div class="slide-number">01 / ПРОБЛЕМА</div>
-                <div class="slide-title">Почему театры<br />теряют зрителей?</div>
+                <div class="slide-title">Почему театры теряют зрителей?</div>
                 <div class="slide-subtitle">И как мы это меняем</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">🌍</span><h4>География</h4><p>90% зрителей не могут попасть в театр.</p></div>
-                    <div class="item"><span class="icon">📱</span><h4>Технологии</h4><p>Нет свободы выбора ракурса.</p></div>
-                    <div class="item"><span class="icon">🎭</span><h4>Молодёжь</h4><p>Театры теряют молодую аудиторию.</p></div>
-                    <div class="item"><span class="icon">💸</span><h4>Доходы</h4><p>Нет глобальной монетизации.</p></div>
+                    <div class="item"><span class="icon">🌍</span><h4>География</h4><p>90% зрителей не могут попасть в театр</p></div>
+                    <div class="item"><span class="icon">📱</span><h4>Технологии</h4><p>Нет свободы выбора ракурса</p></div>
+                    <div class="item"><span class="icon">🎭</span><h4>Молодёжь</h4><p>Театры теряют молодую аудиторию</p></div>
+                    <div class="item"><span class="icon">💸</span><h4>Доходы</h4><p>Нет глобальной монетизации</p></div>
                 </div>
             </div>
 
             <!-- 3. РЕШЕНИЕ -->
             <div class="slide" style="background-image: url('images/bg3.jpg');">
                 <div class="slide-number">02 / РЕШЕНИЕ</div>
-                <div class="slide-title">Технологии будущего<br />уже сегодня</div>
+                <div class="slide-title">Технологии будущего уже сегодня</div>
                 <div class="slide-subtitle">Шоу мира — глобальная платформа для трансляций</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">🎥</span><h4>4DGS</h4><p>Свободный выбор ракурса.</p></div>
-                    <div class="item"><span class="icon">🧠</span><h4>ИИ-агент Ассоль</h4><p>Голосовой гид и компаньон.</p></div>
-                    <div class="item"><span class="icon">🌐</span><h4>17 языков</h4><p>Глобальный охват без барьеров.</p></div>
-                    <div class="item"><span class="icon">🏛️</span><h4>Партнёрский кабинет</h4><p>Театры управляют сами.</p></div>
+                    <div class="item"><span class="icon">🎥</span><h4>4DGS</h4><p>Свободный выбор ракурса</p></div>
+                    <div class="item"><span class="icon">🧠</span><h4>ИИ-агент Ассоль</h4><p>Голосовой гид и компаньон</p></div>
+                    <div class="item"><span class="icon">🌐</span><h4>17 языков</h4><p>Глобальный охват без барьеров</p></div>
+                    <div class="item"><span class="icon">🏛️</span><h4>Партнёрский кабинет</h4><p>Театры управляют сами</p></div>
                 </div>
             </div>
 
             <!-- 4. 4DGS -->
             <div class="slide" style="background-image: url('images/bg4.jpg');">
                 <div class="slide-number">03 / ТЕХНОЛОГИЯ</div>
-                <div class="slide-title">4DGS —<br />свобода ракурса</div>
-                <div class="slide-subtitle">Зритель выбирает точку обзора.</div>
+                <div class="slide-title">4DGS — свобода ракурса</div>
+                <div class="slide-subtitle">Зритель выбирает точку обзора</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">🎬</span><h4>Режиссёрский режим</h4><p>ИИ выбирает лучший ракурс.</p></div>
-                    <div class="item"><span class="icon">🔄</span><h4>Свободный ракурс</h4><p>Двигайте камеру пальцем.</p></div>
-                    <div class="item"><span class="icon">📱</span><h4>Любое устройство</h4><p>ТВ, телефон, ноутбук, VR.</p></div>
-                    <div class="item"><span class="icon">⚡</span><h4>NEXIA</h4><p>Сжатие видео в 8–10 раз.</p></div>
+                    <div class="item"><span class="icon">🎬</span><h4>Режиссёрский режим</h4><p>ИИ выбирает лучший ракурс</p></div>
+                    <div class="item"><span class="icon">🔄</span><h4>Свободный ракурс</h4><p>Двигайте камеру пальцем</p></div>
+                    <div class="item"><span class="icon">📱</span><h4>Любое устройство</h4><p>ТВ, телефон, ноутбук, VR</p></div>
+                    <div class="item"><span class="icon">⚡</span><h4>NEXIA</h4><p>Сжатие видео в 8–10 раз</p></div>
                 </div>
             </div>
 
             <!-- 5. АССОЛЬ -->
             <div class="slide" style="background-image: url('images/bg5.jpg');">
                 <div class="slide-number">04 / ИИ-АГЕНТ</div>
-                <div class="slide-title">Ассоль —<br />ваш гид в мире шоу</div>
-                <div class="slide-subtitle">Искусственный интеллект, который знает всё.</div>
+                <div class="slide-title">Ассоль — ваш гид в мире шоу</div>
+                <div class="slide-subtitle">Искусственный интеллект, который знает всё</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">🗣️</span><h4>Голосовой помощник</h4><p>Управляйте голосом.</p></div>
-                    <div class="item"><span class="icon">🎭</span><h4>Экскурсовод</h4><p>Рассказывает о спектакле.</p></div>
-                    <div class="item"><span class="icon">💬</span><h4>Синхронный комментарий</h4><p>Объясняет в реальном времени.</p></div>
-                    <div class="item"><span class="icon">🧝</span><h4>3D-аватар</h4><p>Ассоль становится живой.</p></div>
+                    <div class="item"><span class="icon">🗣️</span><h4>Голосовой помощник</h4><p>Управляйте голосом</p></div>
+                    <div class="item"><span class="icon">🎭</span><h4>Экскурсовод</h4><p>Рассказывает о спектакле</p></div>
+                    <div class="item"><span class="icon">💬</span><h4>Синхронный комментарий</h4><p>Объясняет в реальном времени</p></div>
+                    <div class="item"><span class="icon">🧝</span><h4>3D-аватар</h4><p>Ассоль становится живой</p></div>
                 </div>
             </div>
 
@@ -348,20 +305,20 @@
                 <div class="slide-title">Что умеет Ассоль</div>
                 <div class="slide-subtitle">Полный набор функций</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">🎤</span><h4>Голосовой диалог</h4><p>Полноценная беседа.</p></div>
-                    <div class="item"><span class="icon">🧠</span><h4>База знаний</h4><p>Всё о спектаклях.</p></div>
-                    <div class="item"><span class="icon">🎨</span><h4>Экскурсия по выставке</h4><p>Ведёт по залам.</p></div>
-                    <div class="item"><span class="icon">🎭</span><h4>Синхронный гид</h4><p>Объясняет сцены.</p></div>
-                    <div class="item"><span class="icon">📅</span><h4>Напоминания</h4><p>О билетах и событиях.</p></div>
-                    <div class="item"><span class="icon">👤</span><h4>3D-аватар</h4><p>Сопровождает зрителя.</p></div>
+                    <div class="item"><span class="icon">🎤</span><h4>Голосовой диалог</h4><p>Полноценная беседа</p></div>
+                    <div class="item"><span class="icon">🧠</span><h4>База знаний</h4><p>Всё о спектаклях</p></div>
+                    <div class="item"><span class="icon">🎨</span><h4>Экскурсия по выставке</h4><p>Ведёт по залам</p></div>
+                    <div class="item"><span class="icon">🎭</span><h4>Синхронный гид</h4><p>Объясняет сцены</p></div>
+                    <div class="item"><span class="icon">📅</span><h4>Напоминания</h4><p>О билетах и событиях</p></div>
+                    <div class="item"><span class="icon">👤</span><h4>3D-аватар</h4><p>Сопровождает зрителя</p></div>
                 </div>
             </div>
 
             <!-- 7. ГОЛОС -->
             <div class="slide" style="background-image: url('images/bg7.jpg');">
                 <div class="slide-number">06 / ГОЛОСОВОЕ УПРАВЛЕНИЕ</div>
-                <div class="slide-title">Управляйте порталом<br />голосом</div>
-                <div class="slide-subtitle">Скажите вслух — и всё сделается.</div>
+                <div class="slide-title">Управляйте порталом голосом</div>
+                <div class="slide-subtitle">Скажите вслух — и всё сделается</div>
                 <div class="slide-content">
                     <div class="item"><span class="icon">🔍</span><h4>Поиск</h4><p>«Найди спектакли с Ургантом»</p></div>
                     <div class="item"><span class="icon">🛒</span><h4>Покупка</h4><p>«Купи два билета»</p></div>
@@ -373,206 +330,135 @@
             <!-- 8. АВАТАР -->
             <div class="slide" style="background-image: url('images/bg8.jpg');">
                 <div class="slide-number">07 / РЕЖИМ АВАТАРА</div>
-                <div class="slide-title">Будьте в зале,<br />не выходя из дома</div>
-                <div class="slide-subtitle">Аватар зрителя в виртуальном зале.</div>
+                <div class="slide-title">Будьте в зале, не выходя из дома</div>
+                <div class="slide-subtitle">Аватар зрителя в виртуальном зале</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">👤</span><h4>Ваш аватар</h4><p>Выбирайте внешность.</p></div>
-                    <div class="item"><span class="icon">🪑</span><h4>Выбор места</h4><p>Садитесь в любой ряд.</p></div>
-                    <div class="item"><span class="icon">💬</span><h4>Общение</h4><p>Чат с другими зрителями.</p></div>
-                    <div class="item"><span class="icon">🎭</span><h4>Эмоции</h4><p>Аватар реагирует на происходящее.</p></div>
+                    <div class="item"><span class="icon">👤</span><h4>Ваш аватар</h4><p>Выбирайте внешность</p></div>
+                    <div class="item"><span class="icon">🪑</span><h4>Выбор места</h4><p>Садитесь в любой ряд</p></div>
+                    <div class="item"><span class="icon">💬</span><h4>Общение</h4><p>Чат с другими зрителями</p></div>
+                    <div class="item"><span class="icon">🎭</span><h4>Эмоции</h4><p>Аватар реагирует на происходящее</p></div>
                 </div>
             </div>
 
             <!-- 9. ЗРИТЕЛЬ -->
             <div class="slide" style="background-image: url('images/bg9.jpg');">
                 <div class="slide-number">08 / ЛИЧНЫЙ КАБИНЕТ</div>
-                <div class="slide-title">Всё для зрителя<br />в одном месте</div>
-                <div class="slide-subtitle">Билеты, история, рекомендации.</div>
+                <div class="slide-title">Всё для зрителя в одном месте</div>
+                <div class="slide-subtitle">Билеты, история, рекомендации</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">🎫</span><h4>Мои билеты</h4><p>QR-коды для входа.</p></div>
-                    <div class="item"><span class="icon">📜</span><h4>История</h4><p>Все просмотренные спектакли.</p></div>
-                    <div class="item"><span class="icon">⭐</span><h4>Избранное</h4><p>Сохраняйте события.</p></div>
-                    <div class="item"><span class="icon">🔔</span><h4>Напоминания</h4><p>Уведомления о трансляциях.</p></div>
+                    <div class="item"><span class="icon">🎫</span><h4>Мои билеты</h4><p>QR-коды для входа</p></div>
+                    <div class="item"><span class="icon">📜</span><h4>История</h4><p>Все просмотренные спектакли</p></div>
+                    <div class="item"><span class="icon">⭐</span><h4>Избранное</h4><p>Сохраняйте события</p></div>
+                    <div class="item"><span class="icon">🔔</span><h4>Напоминания</h4><p>Уведомления о трансляциях</p></div>
                 </div>
             </div>
 
             <!-- 10. ПАРТНЁР -->
             <div class="slide" style="background-image: url('images/bg10.jpg');">
                 <div class="slide-number">09 / ПАРТНЁРСКИЙ КАБИНЕТ</div>
-                <div class="slide-title">Всё для управления<br />театром в одном окне</div>
-                <div class="slide-subtitle">Театры сами управляют контентом и финансами.</div>
+                <div class="slide-title">Всё для управления театром в одном окне</div>
+                <div class="slide-subtitle">Театры сами управляют контентом и финансами</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">🎭</span><h4>Управление событиями</h4><p>Создание, расписание, цены.</p></div>
-                    <div class="item"><span class="icon">👥</span><h4>Управление актёрами</h4><p>Фото, роли, гонорары.</p></div>
-                    <div class="item"><span class="icon">💰</span><h4>Финансовый модуль</h4><p>70% театру, 30% платформе.</p></div>
-                    <div class="item"><span class="icon">📊</span><h4>Аналитика</h4><p>Продажи, зрители, география.</p></div>
-                    <div class="item"><span class="icon">📸</span><h4>Медиатека</h4><p>Фото, видео, 3D-сцены.</p></div>
-                    <div class="item"><span class="icon">🔗</span><h4>API для партнёров</h4><p>Интеграция с системами театра.</p></div>
+                    <div class="item"><span class="icon">🎭</span><h4>Управление событиями</h4><p>Создание, расписание, цены</p></div>
+                    <div class="item"><span class="icon">👥</span><h4>Управление актёрами</h4><p>Фото, роли, гонорары</p></div>
+                    <div class="item"><span class="icon">💰</span><h4>Финансовый модуль</h4><p>70% театру, 30% платформе</p></div>
+                    <div class="item"><span class="icon">📊</span><h4>Аналитика</h4><p>Продажи, зрители, география</p></div>
+                    <div class="item"><span class="icon">📸</span><h4>Медиатека</h4><p>Фото, видео, 3D-сцены</p></div>
+                    <div class="item"><span class="icon">🔗</span><h4>API для партнёров</h4><p>Интеграция с системами театра</p></div>
                 </div>
             </div>
 
             <!-- 11. СМАХИВАНИЕ -->
             <div class="slide" style="background-image: url('images/bg11.jpg');">
                 <div class="slide-number">10 / ИНТЕРАКТИВ</div>
-                <div class="slide-title">Смахните<br />на большой экран</div>
-                <div class="slide-subtitle">Одним движением с телефона на ТВ.</div>
+                <div class="slide-title">Смахните на большой экран</div>
+                <div class="slide-subtitle">Одним движением с телефона на ТВ</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">📱</span><h4>Смахивание</h4><p>Проведите пальцем вверх.</p></div>
-                    <div class="item"><span class="icon">📺</span><h4>Google Cast / AirPlay</h4><p>Поддержка всех протоколов.</p></div>
-                    <div class="item"><span class="icon">🤖</span><h4>ИИ определяет желание</h4><p>Камера видит, что вы хотите.</p></div>
-                    <div class="item"><span class="icon">🔄</span><h4>Автопереключение</h4><p>Подошли к ТВ — переключается.</p></div>
+                    <div class="item"><span class="icon">📱</span><h4>Смахивание</h4><p>Проведите пальцем вверх</p></div>
+                    <div class="item"><span class="icon">📺</span><h4>Google Cast / AirPlay</h4><p>Поддержка всех протоколов</p></div>
+                    <div class="item"><span class="icon">🤖</span><h4>ИИ определяет желание</h4><p>Камера видит, что вы хотите</p></div>
+                    <div class="item"><span class="icon">🔄</span><h4>Автопереключение</h4><p>Подошли к ТВ — переключается</p></div>
                 </div>
             </div>
 
             <!-- 12. КОНКУРЕНТЫ -->
             <div class="slide" style="background-image: url('images/bg12.jpg');">
                 <div class="slide-number">11 / КОНКУРЕНТЫ</div>
-                <div class="slide-title">Мы лучше —<br />потому что мы первые</div>
-                <div class="slide-subtitle">Ни у кого нет 4DGS, ИИ-агента и 17 языков.</div>
+                <div class="slide-title">Мы лучше — потому что мы первые</div>
+                <div class="slide-subtitle">Ни у кого нет 4DGS, ИИ-агента и 17 языков</div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">🎬</span><h4>Marquee TV</h4><p>Нет 4DGS, нет ИИ.</p></div>
-                    <div class="item"><span class="icon">🇷🇺</span><h4>Stage Russia</h4><p>Только российские спектакли.</p></div>
-                    <div class="item"><span class="icon">🇺🇸</span><h4>BroadwayHD</h4><p>Нет выбора ракурса.</p></div>
-                    <div class="item"><span class="icon">🎟️</span><h4>Kassir.ru</h4><p>Только билеты в зал.</p></div>
+                    <div class="item"><span class="icon">🎬</span><h4>Marquee TV</h4><p>Нет 4DGS, нет ИИ</p></div>
+                    <div class="item"><span class="icon">🇷🇺</span><h4>Stage Russia</h4><p>Только российские спектакли</p></div>
+                    <div class="item"><span class="icon">🇺🇸</span><h4>BroadwayHD</h4><p>Нет выбора ракурса</p></div>
+                    <div class="item"><span class="icon">🎟️</span><h4>Kassir.ru</h4><p>Только билеты в зал</p></div>
                 </div>
-                <div style="margin-top:12px; background:rgba(251,191,36,0.06); border:1px solid rgba(251,191,36,0.1); border-radius:12px; padding:12px 20px; display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
-                    <span style="color:#fbbf24; font-weight:600;">✅ 4DGS — только у нас</span>
-                    <span style="color:#fbbf24; font-weight:600;">✅ Ассоль — только у нас</span>
-                    <span style="color:#fbbf24; font-weight:600;">✅ 17 языков — только у нас</span>
+                <div style="margin-top:6px; background:rgba(251,191,36,0.06); border:1px solid rgba(251,191,36,0.1); border-radius:8px; padding:6px 12px; display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+                    <span style="color:#fbbf24; font-size:9px; font-weight:600;">✅ 4DGS — только у нас</span>
+                    <span style="color:#fbbf24; font-size:9px; font-weight:600;">✅ Ассоль — только у нас</span>
+                    <span style="color:#fbbf24; font-size:9px; font-weight:600;">✅ 17 языков — только у нас</span>
                 </div>
             </div>
 
             <!-- 13. ДОХОД -->
             <div class="slide" style="background-image: url('images/bg13.jpg');">
                 <div class="slide-number">12 / ДОХОДНАЯ МОДЕЛЬ</div>
-                <div class="slide-title">Честные деньги<br />для театров</div>
+                <div class="slide-title">Честные деньги для театров</div>
                 <div class="slide-subtitle">70% дохода — театру. 30% — платформе.</div>
-                <div style="display:flex; gap:30px; flex-wrap:wrap; margin:12px 0 16px;">
-                    <div style="background:rgba(251,191,36,0.04); border:1px solid rgba(251,191,36,0.1); border-radius:16px; padding:20px 32px; text-align:center; flex:1; min-width:140px;">
-                        <div style="font-size:52px; font-weight:700; color:#fbbf24;">70%</div>
-                        <div style="color:rgba(255,255,255,0.5); font-size:14px;">Театру</div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap; margin:6px 0 8px;">
+                    <div style="background:rgba(251,191,36,0.04); border:1px solid rgba(251,191,36,0.1); border-radius:12px; padding:12px 20px; text-align:center; flex:1; min-width:100px;">
+                        <div style="font-size:32px; font-weight:700; color:#fbbf24;">70%</div>
+                        <div style="color:rgba(255,255,255,0.5); font-size:11px;">Театру</div>
                     </div>
-                    <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:16px; padding:20px 32px; text-align:center; flex:1; min-width:140px;">
-                        <div style="font-size:52px; font-weight:700; color:#fff;">30%</div>
-                        <div style="color:rgba(255,255,255,0.5); font-size:14px;">Платформе</div>
+                    <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:12px; padding:12px 20px; text-align:center; flex:1; min-width:100px;">
+                        <div style="font-size:32px; font-weight:700; color:#fff;">30%</div>
+                        <div style="color:rgba(255,255,255,0.5); font-size:11px;">Платформе</div>
                     </div>
                 </div>
                 <div class="slide-content">
-                    <div class="item"><span class="icon">🎫</span><h4>Билеты</h4><p>70% театру, 30% платформе.</p></div>
-                    <div class="item"><span class="icon">📺</span><h4>Подписка</h4><p>Безлимитный доступ.</p></div>
-                    <div class="item"><span class="icon">📢</span><h4>Реклама</h4><p>Партнёрские интеграции.</p></div>
-                    <div class="item"><span class="icon">🌍</span><h4>Глобальный охват</h4><p>Зрители из 100+ стран.</p></div>
+                    <div class="item"><span class="icon">🎫</span><h4>Билеты</h4><p>70% театру, 30% платформе</p></div>
+                    <div class="item"><span class="icon">📺</span><h4>Подписка</h4><p>Безлимитный доступ</p></div>
+                    <div class="item"><span class="icon">📢</span><h4>Реклама</h4><p>Партнёрские интеграции</p></div>
+                    <div class="item"><span class="icon">🌍</span><h4>Глобальный охват</h4><p>Зрители из 100+ стран</p></div>
                 </div>
             </div>
 
             <!-- 14. ПЛАН -->
             <div class="slide" style="background-image: url('images/bg14.jpg');">
                 <div class="slide-number">13 / ПЛАН ВНЕДРЕНИЯ</div>
-                <div class="slide-title">Как мы запустим<br />Шоу мира</div>
+                <div class="slide-title">Как мы запустим Шоу мира</div>
                 <div class="slide-subtitle">Чёткие этапы. Реалистичные сроки.</div>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:8px;">
-                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:12px; padding:14px;">
-                        <div style="font-size:28px; font-weight:700; color:#fbbf24;">1</div>
-                        <h4 style="font-family:'Playfair Display',serif; font-size:16px; color:#fff;">MVP</h4>
-                        <p style="font-size:12px; color:rgba(255,255,255,0.5);">4DGS плеер + Stripe</p>
-                        <div style="margin-top:4px; font-size:11px; color:#fbbf24;">2 недели</div>
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-top:6px;">
+                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:8px; padding:8px; text-align:center;">
+                        <div style="font-size:18px; font-weight:700; color:#fbbf24;">1</div>
+                        <h4 style="font-family:'Playfair Display',serif; font-size:11px; color:#fff;">MVP</h4>
+                        <p style="font-size:9px; color:rgba(255,255,255,0.5);">4DGS + Stripe</p>
+                        <div style="font-size:8px; color:#fbbf24;">2 нед</div>
                     </div>
-                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:12px; padding:14px;">
-                        <div style="font-size:28px; font-weight:700; color:#fbbf24;">2</div>
-                        <h4 style="font-family:'Playfair Display',serif; font-size:16px; color:#fff;">Ассоль</h4>
-                        <p style="font-size:12px; color:rgba(255,255,255,0.5);">Голос, чат, экскурсовод</p>
-                        <div style="margin-top:4px; font-size:11px; color:#fbbf24;">2–3 недели</div>
+                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:8px; padding:8px; text-align:center;">
+                        <div style="font-size:18px; font-weight:700; color:#fbbf24;">2</div>
+                        <h4 style="font-family:'Playfair Display',serif; font-size:11px; color:#fff;">Ассоль</h4>
+                        <p style="font-size:9px; color:rgba(255,255,255,0.5);">Голос, чат</p>
+                        <div style="font-size:8px; color:#fbbf24;">2–3 нед</div>
                     </div>
-                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:12px; padding:14px;">
-                        <div style="font-size:28px; font-weight:700; color:#fbbf24;">3</div>
-                        <h4 style="font-family:'Playfair Display',serif; font-size:16px; color:#fff;">Театры</h4>
-                        <p style="font-size:12px; color:rgba(255,255,255,0.5);">ЛК театра, финансы</p>
-                        <div style="margin-top:4px; font-size:11px; color:#fbbf24;">2–3 недели</div>
+                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:8px; padding:8px; text-align:center;">
+                        <div style="font-size:18px; font-weight:700; color:#fbbf24;">3</div>
+                        <h4 style="font-family:'Playfair Display',serif; font-size:11px; color:#fff;">Театры</h4>
+                        <p style="font-size:9px; color:rgba(255,255,255,0.5);">ЛК, финансы</p>
+                        <div style="font-size:8px; color:#fbbf24;">2–3 нед</div>
                     </div>
-                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:12px; padding:14px;">
-                        <div style="font-size:28px; font-weight:700; color:#fbbf24;">4</div>
-                        <h4 style="font-family:'Playfair Display',serif; font-size:16px; color:#fff;">Запуск</h4>
-                        <p style="font-size:12px; color:rgba(255,255,255,0.5);">Домен, хостинг, SSL</p>
-                        <div style="margin-top:4px; font-size:11px; color:#fbbf24;">1 неделя</div>
+                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:8px; padding:8px; text-align:center;">
+                        <div style="font-size:18px; font-weight:700; color:#fbbf24;">4</div>
+                        <h4 style="font-family:'Playfair Display',serif; font-size:11px; color:#fff;">Запуск</h4>
+                        <p style="font-size:9px; color:rgba(255,255,255,0.5);">Домен, SSL</p>
+                        <div style="font-size:8px; color:#fbbf24;">1 нед</div>
                     </div>
-                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:12px; padding:14px;">
-                        <div style="font-size:28px; font-weight:700; color:#fbbf24;">5</div>
-                        <h4 style="font-family:'Playfair Display',serif; font-size:16px; color:#fff;">Масштаб</h4>
-                        <p style="font-size:12px; color:rgba(255,255,255,0.5);">Новые театры, VR</p>
-                        <div style="margin-top:4px; font-size:11px; color:#fbbf24;">Постоянно</div>
+                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:8px; padding:8px; text-align:center;">
+                        <div style="font-size:18px; font-weight:700; color:#fbbf24;">5</div>
+                        <h4 style="font-family:'Playfair Display',serif; font-size:11px; color:#fff;">Масштаб</h4>
+                        <p style="font-size:9px; color:rgba(255,255,255,0.5);">VR, 3D</p>
+                        <div style="font-size:8px; color:#fbbf24;">Пост.</div>
                     </div>
-                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:12px; padding:14px;">
-                        <div style="font-size:28px; font-weight:700; color:#fbbf24;">💰</div>
-                        <h4 style="font-family:'Playfair Display',serif; font-size:16px; color:#fff;">Деньги</h4>
-                        <p style="font-size:12px; color:rgba(255,255,255,0.5);">Продажи через 3–4 недели</p>
-                        <div style="margin-top:4px; font-size:11px; color:#fbbf24;">Окупаемость: 2 мес</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 15. ФИНАЛ -->
-            <div class="slide" style="background-image: url('images/bg15.jpg');">
-                <div class="slide-number">★ ФИНАЛ</div>
-                <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
-                    <div class="slide-title" style="font-size:56px; text-align:center;">Станьте частью<br />шоу мира</div>
-                    <div style="font-family:'Playfair Display',serif; font-size:24px; font-style:italic; color:rgba(255,255,255,0.5); margin-bottom:12px;">Присоединяйтесь к глобальной платформе</div>
-                    <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; margin-top:12px;">
-                        <span style="background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.1); padding:6px 20px; border-radius:30px; font-size:14px; color:#fbbf24;">Театры</span>
-                        <span style="background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.1); padding:6px 20px; border-radius:30px; font-size:14px; color:#fbbf24;">Зрители</span>
-                        <span style="background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.1); padding:6px 20px; border-radius:30px; font-size:14px; color:#fbbf24;">Инвесторы</span>
-                    </div>
-                    <div style="margin-top:20px; padding:12px 24px; background:rgba(255,255,255,0.02); border-radius:12px; border:1px solid rgba(255,255,255,0.04);">
-                        <div style="font-family:'Cormorant Garamond',serif; font-size:20px; color:#fbbf24;">Шоу мира</div>
-                        <div style="font-size:13px; color:rgba(255,255,255,0.3);">shou-mira.com</div>
-                    </div>
-                    <div style="margin-top:20px; font-size:13px; color:rgba(255,255,255,0.2);">© 2026 Шоу мира</div>
-                </div>
-            </div>
-
-        </div><!-- /slides -->
-
-        <!-- ===== НАВИГАЦИЯ ===== -->
-        <div class="nav">
-            <button id="prevBtn">←</button>
-            <div class="dots" id="dots"></div>
-            <button id="nextBtn">→</button>
-        </div>
-
-    </div><!-- /slide-container -->
-</div><!-- /slides-wrapper -->
-
-<script>
-    const slides = document.querySelector('.slides');
-    const slidesCount = document.querySelectorAll('.slide').length;
-    let current = 0;
-    const dotsContainer = document.getElementById('dots');
-
-    for (let i = 0; i < slidesCount; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.dataset.index = i;
-        dot.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(dot);
-    }
-
-    function goTo(index) {
-        if (index < 0) index = 0;
-        if (index >= slidesCount) index = slidesCount - 1;
-        current = index;
-        slides.style.transform = `translateX(-${current * 100}%)`;
-        document.querySelectorAll('.dot').forEach((d, i) => {
-            d.classList.toggle('active', i === current);
-        });
-    }
-
-    document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
-    document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') goTo(current + 1);
-        if (e.key === 'ArrowLeft') goTo(current - 1);
-    });
-</script>
-
-</body>
-</html>
+                    <div style="background:rgba(251,191,36,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:8px; padding:8px; text-align:center;">
+                        <div style="font-size:18px; font-weight:700; color:#fbbf24;">💰</div>
+                        <h4 style="font-family:'Playfair Display',serif; font-size:11px; color:#fff;">Деньги</h4>
+                        <p style="font-size:9px; color:rgba(255,255,255,0.5);">Продажи</
